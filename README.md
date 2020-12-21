@@ -36,7 +36,7 @@ Do not forget, the main dashboard is **PostgreSQL Performance Monitoring Dashboa
 5. Table Information
 6. Bloat Information
 
-# InfluxDB changes
+# InfluxDB Changes
 
 Create new database on InfluxDB as postgres but it is not necessary because InfluxDB database and measurements will be generated automatically. You should generate **telegraf** user with specific password.
 
@@ -91,7 +91,7 @@ Add new rule for telegraf database user in pg_hba.conf file
 host    all             telegraf        localhost               trust
 ```
 
-Some SQL scripts require pg_stat_statements extension. **Don't forget. pg_stat_statement extension requires to restart** 
+Some SQL scripts require pg_stat_statements extension. **Don't forget, pg_stat_statement extension requires to restart** 
 
 ```
 yum install postgresql11-contrib -y
@@ -103,7 +103,7 @@ service postgresql-11 restart
 
 Add **telegraf_based_databases.sh** and **pg_bloats.sh** shell scripts into /etc/telegraf/ folder. 
 
-Create folder for import result of shell scripts.
+Create folder to import result of shell scripts.
 
 ```
 mkdir /etc/telegraf/DO_NOT_DELETE
