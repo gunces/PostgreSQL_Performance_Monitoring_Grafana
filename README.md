@@ -25,20 +25,24 @@ You can monitor your databases like:
   - Last vacuumed time, last analyzed time
   - Show vacuum processed instantly
 
+
 ## PostgreSQL monitoring dashboard is also relevant to other five dashboards bellow:
 
-- General View of Servers
-- Query Information Most Called
-- Query Information Most Time Consumed
-- Table Information
-- Bloat Information
+Do not forget, the main dashboard is **PostgreSQL Performance Monitoring Dashboard**. All dashboards are following.
 
-## InfluxDB changes
+1. PostgreSQL Performance Monitoring Dashboard
+2. General View of Servers
+3. Query Information Most Called
+4. Query Information Most Time Consumed
+5. Table Information
+6. Bloat Information
+
+# InfluxDB changes
 
 Add new database on InfluxDB as postgres
 
 
-## PostgreSQL Database Changes
+# PostgreSQL Database Changes
 
 Run bellow command on only **postgres** database. 
 
@@ -93,7 +97,7 @@ shared_preload_libraries = 'pg_stat_statements'
 service postgresql-11 restart
 ```
 
-## Shell Scripts on PostgreSQL Server
+# Shell Scripts on PostgreSQL Server
 
 Add **telegraf_based_databases.sh** and **pg_bloats.sh** shell scripts into /etc/telegraf/ folder. 
 
@@ -105,7 +109,7 @@ chown postgres:postgres /etc/telegraf/DO_NOT_DELETE
 chmod 755 /etc/telegraf/DO_NOT_DELETE
 ```
 
-## Add New Cronjob on PostgreSQL Server
+# Add New Cronjob on PostgreSQL Server
 
 telegraf_based_databases.sh script run every 10 seconds.
 
@@ -119,7 +123,7 @@ After all changes restart crontab service
 systemctl restart crontab 
 ```
 
-## Telegraf Configurations on PostgreSQL Server
+# Telegraf Configurations on PostgreSQL Server
 
 Install telegraf on PostgreSQL server. You can find more information here -> https://docs.influxdata.com/telegraf/v1.16/introduction/installation/ 
 
@@ -136,14 +140,14 @@ After all changes restart telegraf service
 ```
 systemctl restart telegraf
 ```
-## Check InfluxDB 
+# Check InfluxDB 
 
 Connect InfluxDB and list measurements
 ```
 show measurements
 ```
 
-## Add Grafana Dashboards
+# Add Grafana Dashboards
 
 The main dashboard is PostgreSQL Performance Monitoring Dashboard. You can find its json file for **postgresqlPerformanceMonitoringDashboard.json** for Grafana. First you must add the main dashboard then you can import others.
 
