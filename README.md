@@ -1,4 +1,3 @@
-# postgresPerformanceMonitoring
 # PostgreSQL Performance Monitoring With Grafana
 
 This dashboard helps you to monitor your **PostgreSQL** databases based on database activity and OS activity. 
