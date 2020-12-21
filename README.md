@@ -142,3 +142,10 @@ Connect InfluxDB and list measurements
 ```
 show measurements
 ```
+
+## Add Grafana Dashboards
+
+The main dashboard is PostgreSQL Performance Monitoring Dashboard. You can find its json file for **postgresqlPerformanceMonitoringDashboard.json** for Grafana. First you must add the main dashboard then you can import others.
+
+After importing main dashboard you are ready to import other dashboards same way.
+
