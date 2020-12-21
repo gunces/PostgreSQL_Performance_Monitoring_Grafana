@@ -5,35 +5,34 @@ HOSTNAME=`hostname -a`
 DQ='\"'
 DBUSER=telegraf
 DBHOST=localhost
-DBPORT=1923
+DBPORT=<change it>
 
-OUTPUT_FOLDER=/etc/telegraf/DONT_DELETE
+OUTPUT_FOLDER=/etc/telegraf/DO_NOT_DELETE
 BLOATS_OUTPUT=$OUTPUT_FOLDER/bloats.csv
 DBSERVERINFO_OUTPUT=$OUTPUT_FOLDER/dbServerInfo.csv
 ALLTABLESTATISTICS_OUTPUT=$OUTPUT_FOLDER/allTablesStatistics.csv
-VACUUMPROGRESS_OUTPUT=$OUTPUT_FOLDER/vacuumprogress.csv
+VACUUMPROGRESS_OUTPUT=$OUTPUT_FOLDER/vacuumProgress.csv
 
 > $BLOATS_OUTPUT
 > $DBSERVERINFO_OUTPUT
 > $ALLTABLESTATISTICS_OUTPUT
 > $VACUUMPROGRESS_OUTPUT
 
-
 chown postgres:postgres $BLOATS_OUTPUT
 chown postgres:postgres $DBSERVERINFO_OUTPUT
 chown postgres:postgres $ALLTABLESTATISTICS_OUTPUT
 chown postgres:postgres $VACUUMPROGRESS_OUTPUT
 
-for DB in $(su - postgres -c "psql -h $DBHOST -p $DBPORT -qAt -U $DBUSER -d postgres -c \" select datname from pg_database where datname not in ('template0','template1')\""); do
+for DB in $(su - postgres -c "psql -h $DBHOST -p $DBPORT -qAt -U $DBUSER -d $DB -c \" select datname from pg_database where datname not in ('template0','template1')\""); do
 
   # Collect All Table Statistics
   echo $(su - postgres -c "psql -h $DBHOST -p $DBPORT -qAt -U $DBUSER -d $DB -c \" SELECT 'postgresql.all_table_statistics' || ',' || '$DB' || ',' || '$HOSTNAME' || ',' || '$HOSTNAME' || ',' || schemaname || ',' || relname || ',' || pg_total_relation_size(relid) || ',' || pg_total_relation_size(relid) - pg_relation_size(relid) || ',' ||  seq_scan|| ',' || seq_tup_read|| ',' || coalesce(idx_scan,0)|| ',' || coalesce(idx_tup_fetch,0) || ',' || coalesce(n_tup_ins,0)|| ',' || coalesce(n_tup_upd,0) || ',' || coalesce(n_tup_del,0) || ',' || coalesce(n_tup_hot_upd,0) || ',' || coalesce(n_live_tup,0) || ',' || coalesce(n_dead_tup,0) || ',' || coalesce(n_mod_since_analyze,0) || ',' || coalesce(last_vacuum,'2020-01-01') || ',' || coalesce(last_autovacuum,'2020-01-01') || ',' || coalesce(last_analyze,'2020-01-01') || ',' || coalesce(last_autoanalyze,'2020-01-01')|| ',' || coalesce(vacuum_count,0)|| ',' || coalesce(autovacuum_count,0)|| ',' || coalesce(analyze_count,0)|| ',' || coalesce(autoanalyze_count,0) || ',' || $UNIXTIME  FROM pg_catalog.pg_stat_user_tables ORDER BY pg_total_relation_size(relid) DESC\" >> $ALLTABLESTATISTICS_OUTPUT")
 
   # Collect Vacuum Progress Information
-echo $(su - postgres -c "psql -h $DBHOST -p $DBPORT -qAt -U postgres -d $DB -c \" select 'postgresql.pg_stat_progress_vacuum' || ',' || extract(EPOCH FROM now()-query_start::timestamp)::int || ',' ||  heap_blks_total-heap_blks_scanned || ',' || c.relname || ',' || (100*heap_blks_scanned)/heap_blks_total || ',' || (100*spv.heap_blks_vacuumed)/heap_blks_total  || ',' || spv.pid || ',' ||  spv.phase || ',' ||  spv.heap_blks_total || ',' ||  spv.heap_blks_scanned || ',' ||  spv.heap_blks_vacuumed || ',' ||  spv.index_vacuum_count || ',' ||  spv.max_dead_tuples || ',' ||  spv.num_dead_tuples || ',' ||  $UNIXTIME from pg_stat_progress_vacuum spv inner join pg_class c on c.oid=spv.relid inner join pg_stat_activity sa on sa.pid=spv.pid and sa.state='active'\" >> $VACUUMPROGRESS_OUTPUT")
+echo $(su - postgres -c "psql -h $DBHOST -p $DBPORT -qAt -U $DBUSER -d $DB -c \" select 'postgresql.pg_stat_progress_vacuum' || ',' || extract(EPOCH FROM now()-query_start::timestamp)::int || ',' ||  heap_blks_total-heap_blks_scanned || ',' || c.relname || ',' || (100*heap_blks_scanned)/heap_blks_total || ',' || (100*spv.heap_blks_vacuumed)/heap_blks_total  || ',' || spv.pid || ',' ||  spv.phase || ',' ||  spv.heap_blks_total || ',' ||  spv.heap_blks_scanned || ',' ||  spv.heap_blks_vacuumed || ',' ||  spv.index_vacuum_count || ',' ||  spv.max_dead_tuples || ',' ||  spv.num_dead_tuples || ',' ||  $UNIXTIME from pg_stat_progress_vacuum spv inner join pg_class c on c.oid=spv.relid inner join pg_stat_activity sa on sa.pid=spv.pid and sa.state='active'\" >> $VACUUMPROGRESS_OUTPUT")
 
   # Collect Bloat Information
-  echo $(su - postgres -c "psql -h $DBHOST -p $DBPORT -qAt -U postgres -d $DB -c \" WITH constants AS (
+  echo $(su - postgres -c "psql -h $DBHOST -p $DBPORT -qAt -U $DBUSER -d $DB -c \" WITH constants AS (
   SELECT current_setting('block_size')::numeric AS bs, 23 AS hdr, 4 AS ma),
 bloat_info AS (
   SELECT
