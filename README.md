@@ -151,7 +151,11 @@ show measurements
 
 # Add Grafana Dashboards
 
-The main dashboard is PostgreSQL Performance Monitoring Dashboard. You can find its json file for **postgresqlPerformanceMonitoringDashboard.json** for Grafana. First you must add the main dashboard then you can import others.
+After all configuration we are ready to import JSON files into Grafana. 
+
+The main dashboard is PostgreSQL Performance Monitoring Dashboard. You can find its json file under Grafana JSON Files as **postgresqlPerformanceMonitoringDashboard.json**. First you must add the main dashboard then you import others.
 
 After importing main dashboard you are ready to import other dashboards same way.
+
+That's it.
 
