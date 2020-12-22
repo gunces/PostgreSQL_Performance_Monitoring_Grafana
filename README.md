@@ -1,8 +1,10 @@
 # PostgreSQL Performance Monitoring With Grafana
 
-This dashboard helps you to monitor your **PostgreSQL** databases based on database activity and OS activity. 
+This dashboard helps you to monitor your **PostgreSQL** databases based on database and OS activity. 
 
-**Grafana, Telegraf and InfluxDB tools are used for this project and All databases OS is CentOS 7.** 
+>*Before beginning, this dashboards has Database and OS side monitoring panels. For the OS panels, I benefit from exists Grafana Dashboards examples from https://grafana.com/grafana/dashboards but I did not noted and I can not give any credit rigth now.*
+
+>**Grafana, Telegraf and InfluxDB tools are used for this project and All databases OS is CentOS 7.** 
 
 You can monitor your databases like:
 - General database configuration information that may affect your queries like shared_buffers, work_mem, etc.
@@ -64,6 +66,8 @@ Do not forget, the main dashboard is **PostgreSQL Performance Monitoring Dashboa
 4. Query Information Most Time Consumed
 5. Table Information
 6. Bloat Information
+
+>This documents will not direct you to installing InfluxDB, Telegraf or Grafana. If you have already them you can change your configs then you start monitoring your systems.
 
 # InfluxDB Changes
 
@@ -168,12 +172,15 @@ mv /etc/telegraf/telegraf.conf /etc/telegraf/telegraf.conf_old
 Now, move new telegraf.conf file into /etc/telegraf/
 
 After all changes restart telegraf service
+
 ```
 systemctl restart telegraf
 ```
+
 # Check InfluxDB 
 
 Connect InfluxDB and list measurements
+
 ```
 show measurements
 ```
