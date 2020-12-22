@@ -2,7 +2,7 @@
 
 This dashboard helps you to monitor your **PostgreSQL** databases based on database and OS activity. 
 
->*Before beginning, this dashboards has Database and OS side monitoring panels. For the OS panels, I benefit from exists Grafana Dashboards examples from https://grafana.com/grafana/dashboards but I did not noted and I can not give any credit rigth now.*
+>*Before beginning, this dashboards has Database and OS side monitoring panels. For the OS panels, I benefit from exists Grafana Dashboards examples from https://grafana.com/grafana/dashboards but I did not noted, so I can not give any credit rigth now.*
 
 >**Grafana, Telegraf and InfluxDB tools are used for this project and All databases OS is CentOS 7.** 
 
