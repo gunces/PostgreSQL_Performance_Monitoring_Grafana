@@ -2,7 +2,7 @@
 
 This dashboard helps you to monitor your **PostgreSQL** databases based on database activity and OS activity. 
 
-**Grafana, Telegraf and InfluxDB tools are used for this project.**
+**Grafana, Telegraf and InfluxDB tools are used for this project and All databases OS is CentOS 7.** 
 
 You can monitor your databases like:
 - General database configuration information that may affect your queries like shared_buffers, work_mem, etc.
@@ -24,6 +24,35 @@ You can monitor your databases like:
   - Last vacuumed time, last analyzed time
   - Show vacuum processed instantly
 
+General view of Performance Monitoring Dashboard.
+![](Images/postgresql_performance_monitoring_dash_1.png)
+![](Images/postgresql_performance_monitoring_dash_2.png)
+![](Images/postgresql_performance_monitoring_dash_3.PNG)
+![](Images/postgresql_performance_monitoring_dash_4.PNG)
+![](Images/postgresql_performance_monitoring_dash_5.PNG)
+
+You can see SQL queries on the right side of the panels.
+![](Images/postgresql_performance_monitoring_dash_6.png)
+
+It shows queries' frequences with their own.
+![](Images/postgresql_performance_monitoring_dash_7.PNG)
+
+Tables' bloat information with size tolerance
+![](Images/table_information_5.png)
+
+You can see all servers that all is monitoring
+![](Images/general_view_of_servers_1.PNG)
+
+Detailed dashboard for most called queries
+![](Images/query_information_most_called_1.png)
+
+Detailed dashboard for time consuming queries which is linked with PostgreSQL Performance Monitoring dashboard.
+![](Images/query_information_most_time_consumed_1.png)
+
+Table informations
+![](Images/table_information_1.png)
+![](Images/table_information_2.PNG)
+![](Images/table_information_3.PNG)
 
 ## PostgreSQL monitoring dashboard is also relevant to other five dashboards bellow:
 
