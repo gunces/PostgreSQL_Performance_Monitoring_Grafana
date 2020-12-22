@@ -26,8 +26,8 @@ You can monitor your databases like:
   - Last vacuumed time, last analyzed time
   - Show vacuum processed instantly
 
-## General view of Performance Monitoring Dashboard.
-### PostgreSQL Performance Monitoring
+## General View of Performance Monitoring
+### PostgreSQL Performance Monitoring Dashboard
 
 ![](Images/postgresql_performance_monitoring_dash_1.png)
 ![](Images/postgresql_performance_monitoring_dash_2.png)
