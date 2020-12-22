@@ -26,7 +26,9 @@ You can monitor your databases like:
   - Last vacuumed time, last analyzed time
   - Show vacuum processed instantly
 
-General view of Performance Monitoring Dashboard.
+## General view of Performance Monitoring Dashboard.
+### PostgreSQL Performance Monitoring
+
 ![](Images/postgresql_performance_monitoring_dash_1.png)
 ![](Images/postgresql_performance_monitoring_dash_2.png)
 ![](Images/postgresql_performance_monitoring_dash_3.PNG)
@@ -39,22 +41,31 @@ You can see SQL queries on the right side of the panels.
 It shows queries' frequences with their own.
 ![](Images/postgresql_performance_monitoring_dash_7.PNG)
 
+### Table Information Dashboard
+
+General views
+
+![](Images/table_information_1.png)
+![](Images/table_information_2.PNG)
+![](Images/table_information_3.PNG)
+
 Tables' bloat information with size tolerance
 ![](Images/table_information_5.png)
+
+### General View of Servers Dashboard
 
 You can see all servers that all is monitoring
 ![](Images/general_view_of_servers_1.PNG)
 
+### Most Called Queries Dashboard
+
 Detailed dashboard for most called queries
 ![](Images/query_information_most_called_1.png)
 
+### Time Consumed Queries Dashboard
+
 Detailed dashboard for time consuming queries which is linked with PostgreSQL Performance Monitoring dashboard.
 ![](Images/query_information_most_time_consumed_1.png)
-
-Table informations
-![](Images/table_information_1.png)
-![](Images/table_information_2.PNG)
-![](Images/table_information_3.PNG)
 
 ## PostgreSQL monitoring dashboard is also relevant to other five dashboards bellow:
 
@@ -117,6 +128,7 @@ CREATE VIEW dba.pg_blocking_queries as (SELECT (select datname from pg_database 
 
 GRANT SELECT ON TABLE dba.pg_blocking_queries TO telegraf ;
 ```
+>Blocking queries did not implemented yet into the main dashboard. 
 
 Add new rule for telegraf database user in pg_hba.conf file
 
