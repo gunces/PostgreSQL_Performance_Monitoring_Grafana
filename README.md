@@ -6,7 +6,7 @@ This dashboard helps you to monitor your **PostgreSQL** databases based on datab
 
 >**Grafana, Telegraf and InfluxDB tools are used for this project. All databases are PostgreSQL 11+ and all database servers' OS is CentOS 7.** 
 
-## What will you monitor wit this project in Grafana?
+## What will you monitor with this project in Grafana?
 
 You can monitor your databases like:
 - General database configuration information that may affect your queries like shared_buffers, work_mem, etc.
