@@ -37,14 +37,15 @@ It shows some important configurations of PostgreSQL instance and replication st
 
 Background process and checkpoint status.
 
-![](Images/postgresql_performance_monitoring_dash_1.png)
+![](Images/postgresql_performance_monitoring_dash_2.png)
 
 Database size, transaction status and session information.
 
-![](Images/postgresql_performance_monitoring_dash_2.png)
 ![](Images/postgresql_performance_monitoring_dash_3.PNG)
+
 ![](Images/postgresql_performance_monitoring_dash_4.PNG)
-![](Images/postgresql_performance_monitoring_dash_5.PNG)
+
+![](Images/postgresql_performance_monitoring_dash_5.png)
 
 You can see SQL queries on the right side of the panels.
 
