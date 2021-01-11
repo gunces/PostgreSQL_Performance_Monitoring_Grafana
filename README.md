@@ -31,7 +31,16 @@ You can monitor your databases like:
 ## General View of Performance Monitoring
 ### PostgreSQL Performance Monitoring Dashboard
 
+It shows some important configurations of PostgreSQL instance and replication status instantly.
+
+![](Images/postgresql_performance_monitoring_dash_9.png)
+
+Background process and checkpoint status.
+
 ![](Images/postgresql_performance_monitoring_dash_1.png)
+
+Database size, transaction status and session information.
+
 ![](Images/postgresql_performance_monitoring_dash_2.png)
 ![](Images/postgresql_performance_monitoring_dash_3.PNG)
 ![](Images/postgresql_performance_monitoring_dash_4.PNG)
