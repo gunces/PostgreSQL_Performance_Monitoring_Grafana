@@ -137,7 +137,7 @@
               "type": "tag"
             }
           ],
-          "measurement": "postgresql.pg_most50_time_consuming_queries",
+          "measurement": "pg_most50_time_consuming_queries",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -240,7 +240,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_most50_time_consuming_queries",
+          "measurement": "pg_most50_time_consuming_queries",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -383,7 +383,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_most50_time_consuming_queries",
+          "measurement": "pg_most50_time_consuming_queries",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -525,7 +525,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_most50_time_consuming_queries",
+          "measurement": "pg_most50_time_consuming_queries",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -662,14 +662,14 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_INFLUXDB-POSTGRES}",
-        "definition": "SHOW TAG VALUES FROM \"postgresql.pg_most50_time_consuming_queries\" WITH KEY=db where host=~/$server/ ",
+        "definition": "SHOW TAG VALUES FROM \"pg_most50_time_consuming_queries\" WITH KEY=db where host=~/$server/ ",
         "hide": 0,
         "includeAll": false,
         "label": "Database",
         "multi": false,
         "name": "database",
         "options": [],
-        "query": "SHOW TAG VALUES FROM \"postgresql.pg_most50_time_consuming_queries\" WITH KEY=db where host=~/$server/ ",
+        "query": "SHOW TAG VALUES FROM \"pg_most50_time_consuming_queries\" WITH KEY=db where host=~/$server/ ",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -684,14 +684,14 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_INFLUXDB-POSTGRES}",
-        "definition": "SHOW TAG VALUES FROM \"postgresql.pg_most50_time_consuming_queries\" WITH KEY=queryid where host=~/$server/ and db=~/$database/",
+        "definition": "SHOW TAG VALUES FROM \"pg_most50_time_consuming_queries\" WITH KEY=queryid where host=~/$server/ and db=~/$database/",
         "hide": 0,
         "includeAll": false,
         "label": "QueryId",
         "multi": false,
         "name": "QueryId",
         "options": [],
-        "query": "SHOW TAG VALUES FROM \"postgresql.pg_most50_time_consuming_queries\" WITH KEY=queryid where host=~/$server/ and db=~/$database/",
+        "query": "SHOW TAG VALUES FROM \"pg_most50_time_consuming_queries\" WITH KEY=queryid where host=~/$server/ and db=~/$database/",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
