@@ -106,7 +106,7 @@ Do not forget, the main dashboard is **PostgreSQL Performance Monitoring Dashboa
 Create new database on InfluxDB as postgres but it is not necessary because InfluxDB database and measurements will be generated automatically. You should generate **telegraf** user with specific password.
 
 ```
-CREATE USER telegraf WITH PASSWORD '<password>' WITH ALL PRIVILEGES
+CREATE USER telegraf WITH PASSWORD '<password>' WITH ALL PRIVILEGES;
 ```
 
 # PostgreSQL Database Changes
