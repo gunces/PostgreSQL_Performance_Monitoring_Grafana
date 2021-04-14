@@ -64,7 +64,7 @@ bloat_info AS (
   JOIN pg_index i ON indrelid = cc.oid
   JOIN pg_class c2 ON c2.oid = i.indexrelid
 )
-SELECT  'postgresql.bloats' || ',' || '$DB' || ',' || '$HOSTNAME' || ',' || '$HOSTNAME' || ',' || type || ',' || schemaname || ',' || object_name || ',' || bloat || ',' || (raw_waste) || ',' || object_size || ',' || '$UNIXTIME'
+SELECT  'bloats' || ',' || '$DB' || ',' || '$HOSTNAME' || ',' || '$HOSTNAME' || ',' || type || ',' || schemaname || ',' || object_name || ',' || bloat || ',' || (raw_waste) || ',' || object_size || ',' || '$UNIXTIME'
 FROM
 (SELECT
   'table' as type,
