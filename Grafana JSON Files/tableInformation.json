@@ -162,7 +162,7 @@
       "targets": [
         {
           "groupBy": [],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -286,7 +286,7 @@
       "targets": [
         {
           "groupBy": [],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -403,7 +403,7 @@
       "targets": [
         {
           "groupBy": [],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -540,7 +540,7 @@
       "targets": [
         {
           "groupBy": [],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -652,7 +652,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -788,7 +788,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -928,7 +928,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1104,7 +1104,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1252,7 +1252,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1401,7 +1401,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1659,7 +1659,7 @@
               "type": "tag"
             }
           ],
-          "measurement": "postgresql.pg_stat_progress_vacuum",
+          "measurement": "pg_stat_progress_vacuum",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1851,7 +1851,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_progress_vacuum",
+          "measurement": "pg_stat_progress_vacuum",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2042,7 +2042,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_progress_vacuum",
+          "measurement": "pg_stat_progress_vacuum",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2193,14 +2193,14 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_INFLUXDB-POSTGRES}",
-        "definition": "SHOW TAG VALUES FROM \"postgresql.all_table_statistics\" WITH KEY=datname where host=~/$server/  ",
+        "definition": "SHOW TAG VALUES FROM \"all_table_statistics\" WITH KEY=datname where host=~/$server/  ",
         "hide": 0,
         "includeAll": false,
         "label": "database",
         "multi": false,
         "name": "database",
         "options": [],
-        "query": "SHOW TAG VALUES FROM \"postgresql.all_table_statistics\" WITH KEY=datname where host=~/$server/  ",
+        "query": "SHOW TAG VALUES FROM \"all_table_statistics\" WITH KEY=datname where host=~/$server/  ",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -2215,14 +2215,14 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_INFLUXDB-POSTGRES}",
-        "definition": "SHOW TAG VALUES FROM \"postgresql.all_table_statistics\" WITH KEY=table_name where host=~/$server/ and datname=~/$database/",
+        "definition": "SHOW TAG VALUES FROM \"all_table_statistics\" WITH KEY=table_name where host=~/$server/ and datname=~/$database/",
         "hide": 0,
         "includeAll": false,
         "label": "table",
         "multi": false,
         "name": "table",
         "options": [],
-        "query": "SHOW TAG VALUES FROM \"postgresql.all_table_statistics\" WITH KEY=table_name where host=~/$server/ and datname=~/$database/",
+        "query": "SHOW TAG VALUES FROM \"all_table_statistics\" WITH KEY=table_name where host=~/$server/ and datname=~/$database/",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
