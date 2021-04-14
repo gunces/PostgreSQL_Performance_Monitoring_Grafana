@@ -1449,10 +1449,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database_dtl",
+          "measurement": "pg_stat_database_dtl",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT last(\"number_of_conn\") AS \"active\" FROM \"postgresql.pg_stat_database_dtl\" WHERE (\"host\" =~ /^$server$/ AND \"db\" =~ /^$database$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT last(\"number_of_conn\") AS \"active\" FROM \"pg_stat_database_dtl\" WHERE (\"host\" =~ /^$server$/ AND \"db\" =~ /^$database$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1585,7 +1585,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_general_information",
+          "measurement": "pg_general_information",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1714,7 +1714,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_general_information",
+          "measurement": "pg_general_information",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1849,7 +1849,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_general_information",
+          "measurement": "pg_general_information",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1978,7 +1978,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_general_information",
+          "measurement": "pg_general_information",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2101,7 +2101,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_general_information",
+          "measurement": "pg_general_information",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2231,7 +2231,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_general_information",
+          "measurement": "pg_general_information",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2354,7 +2354,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_general_information",
+          "measurement": "pg_general_information",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2483,7 +2483,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_general_information",
+          "measurement": "pg_general_information",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2599,7 +2599,7 @@
         {
           "alias": "$col",
           "groupBy": [],
-          "measurement": "postgresql.pg_check_replication_health",
+          "measurement": "pg_check_replication_health",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2795,10 +2795,10 @@
             }
           ],
           "hide": false,
-          "measurement": "postgresql.pg_stat_bgwriter",
+          "measurement": "pg_stat_bgwriter",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT non_negative_difference(mean(\"checkpoints_req\")) AS \"Checkpoint Required\", non_negative_difference(mean(\"checkpoints_timed\")) AS \"Checkpoint Timed\", non_negative_difference(mean(\"checkpoints_timed\")) AS \"Checkpoint Timed\" FROM \"postgresql.pg_stat_bgwriter\" WHERE (\"host\" =~ /^$server$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT non_negative_difference(mean(\"checkpoints_req\")) AS \"Checkpoint Required\", non_negative_difference(mean(\"checkpoints_timed\")) AS \"Checkpoint Timed\", non_negative_difference(mean(\"checkpoints_timed\")) AS \"Checkpoint Timed\" FROM \"pg_stat_bgwriter\" WHERE (\"host\" =~ /^$server$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -2985,7 +2985,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database",
+          "measurement": "pg_stat_database",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3121,10 +3121,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database",
+          "measurement": "pg_stat_database",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT non_negative_difference(mean(\"conflicts\")) AS \"conflicts\", non_negative_difference(mean(\"deadlocks\")) AS \"deadlocks\" FROM \"postgresql.pg_stat_database\" WHERE (\"host\" =~ /^$server$/ AND \"db\" =~ /^$database$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT non_negative_difference(mean(\"conflicts\")) AS \"conflicts\", non_negative_difference(mean(\"deadlocks\")) AS \"deadlocks\" FROM \"pg_stat_database\" WHERE (\"host\" =~ /^$server$/ AND \"db\" =~ /^$database$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -3288,7 +3288,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database",
+          "measurement": "pg_stat_database",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3454,7 +3454,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database",
+          "measurement": "pg_stat_database",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3657,7 +3657,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3821,7 +3821,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_bgwriter",
+          "measurement": "pg_stat_bgwriter",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -4045,7 +4045,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database",
+          "measurement": "pg_stat_database",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -4218,10 +4218,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database_dtl",
+          "measurement": "pg_stat_database_dtl",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"datsize_in_kb\") FROM \"postgresql.pg_stat_database_dtl\" WHERE (\"host\" =~ /^$server$/ AND \"db\" =~ /^$database$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT mean(\"datsize_in_kb\") FROM \"pg_stat_database_dtl\" WHERE (\"host\" =~ /^$server$/ AND \"db\" =~ /^$database$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -4422,7 +4422,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database_dtl",
+          "measurement": "pg_stat_database_dtl",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -4570,7 +4570,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database_dtl",
+          "measurement": "pg_stat_database_dtl",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -4722,7 +4722,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database_dtl",
+          "measurement": "pg_stat_database_dtl",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "C",
@@ -4831,7 +4831,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_general_information",
+          "measurement": "pg_general_information",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -4972,7 +4972,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database_dtl",
+          "measurement": "pg_stat_database_dtl",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -5031,7 +5031,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database",
+          "measurement": "pg_stat_database",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -5203,7 +5203,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.block_detail",
+          "measurement": "block_detail",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -5348,10 +5348,10 @@
             }
           ],
           "limit": "",
-          "measurement": "postgresql.block_detail",
+          "measurement": "block_detail",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT non_negative_difference(sum(\"calls\")) FROM \"postgresql.pg_stat_statements\" WHERE (\"host\" =~ /^$server$/ AND \"datname\" =~ /^$database$/) AND $timeFilter GROUP BY time($__interval), \"datname\" fill(linear)",
+          "query": "SELECT non_negative_difference(sum(\"calls\")) FROM \"pg_stat_statements\" WHERE (\"host\" =~ /^$server$/ AND \"datname\" =~ /^$database$/) AND $timeFilter GROUP BY time($__interval), \"datname\" fill(linear)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -5493,7 +5493,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.block_detail",
+          "measurement": "block_detail",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -5642,7 +5642,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.block_detail",
+          "measurement": "block_detail",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -5813,7 +5813,7 @@
       "targets": [
         {
           "groupBy": [],
-          "measurement": "postgresql.pg_stat_activity_active",
+          "measurement": "pg_stat_activity_active",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -6068,7 +6068,7 @@
       "targets": [
         {
           "groupBy": [],
-          "measurement": "postgresql.pg_most50_time_consuming_queries",
+          "measurement": "pg_most50_time_consuming_queries",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -6309,7 +6309,7 @@
       "targets": [
         {
           "groupBy": [],
-          "measurement": "postgresql.pg_most50_calls_queries",
+          "measurement": "pg_most50_calls_queries",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -6532,7 +6532,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_most50_time_consuming_queries",
+          "measurement": "pg_most50_time_consuming_queries",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -6743,7 +6743,7 @@
               "type": "tag"
             }
           ],
-          "measurement": "postgresql.all_table_statistics",
+          "measurement": "all_table_statistics",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -7059,10 +7059,10 @@
       "targets": [
         {
           "groupBy": [],
-          "measurement": "postgresql.bloats",
+          "measurement": "bloats",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"relname\" AS \"Relation Name\", \"bloat\" AS \"Bloat %\", \"wasted\" AS \"Wasted\", \"type\" AS \"Relation Type\", \"datname\" AS \"DB\" FROM \"postgresql.bloats\" WHERE (\"host\" =~ /^$server$/ AND \"datname\" =~ /^$database$/ AND \"time\" >= 'now()-20s') AND $timeFilter",
+          "query": "SELECT \"relname\" AS \"Relation Name\", \"bloat\" AS \"Bloat %\", \"wasted\" AS \"Wasted\", \"type\" AS \"Relation Type\", \"datname\" AS \"DB\" FROM \"bloats\" WHERE (\"host\" =~ /^$server$/ AND \"datname\" =~ /^$database$/ AND \"time\" >= 'now()-20s') AND $timeFilter",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "table",
@@ -7215,7 +7215,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database",
+          "measurement": "pg_stat_database",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -7356,7 +7356,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "postgresql.pg_stat_database",
+          "measurement": "pg_stat_database",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -12069,19 +12069,19 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_INFLUXDB-POSTGRES}",
-        "definition": "SHOW TAG VALUES FROM \"postgresql.pg_stat_database\" WITH KEY=db  WHERE host=~/$server/",
+        "definition": "SHOW TAG VALUES FROM \"pg_stat_database\" WITH KEY=db  WHERE host=~/$server/",
         "hide": 0,
         "includeAll": false,
         "label": "database",
         "multi": false,
         "name": "database",
         "options": [],
-        "query": "SHOW TAG VALUES FROM \"postgresql.pg_stat_database\" WITH KEY=db  WHERE host=~/$server/",
+        "query": "SHOW TAG VALUES FROM \"pg_stat_database\" WITH KEY=db  WHERE host=~/$server/",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 1,
-        "tagValuesQuery": "SHOW TAG VALUES FROM \"postgresql.pg_stat_database\" WITH KEY=host",
+        "tagValuesQuery": "SHOW TAG VALUES FROM \"pg_stat_database\" WITH KEY=host",
         "tags": [],
         "tagsQuery": "server",
         "type": "query",
